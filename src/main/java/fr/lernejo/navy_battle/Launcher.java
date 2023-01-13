@@ -64,9 +64,7 @@ public class Launcher {
         try {
             api = new Api(port);
         } catch (final IOException e) {
-            System.err.println("Error on API Start");
-            e.printStackTrace();
-            System.exit(2);
+            System.err.println("Error on API Start"); e.printStackTrace(); System.exit(2);
             return;
         }
         api.createContext("/", new NotFoundRoute());

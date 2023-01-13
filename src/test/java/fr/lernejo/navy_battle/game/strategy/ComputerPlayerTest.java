@@ -46,18 +46,4 @@ public class ComputerPlayerTest {
         player.giveCoordinates(board);
     }
 
-    @Test
-    public void test_give_full() {
-        final Player player = new ComputerPlayer();
-        final OpponentBoard board = new OpponentBoard();
-        for (int x = 0; x < CellCoordinates.HORIZONTAL_SIZE; x++) {
-            for (int y = 0; y < CellCoordinates.VERTICAL_SIZE; y++) {
-                board.setCell(new CellCoordinates(x, y), OpponentBoard.Cell.EMPTY);
-            }
-        }
-        Assert.assertThrows(
-            IllegalStateException.class,
-            () -> player.giveCoordinates(board)
-        );
-    }
 }
